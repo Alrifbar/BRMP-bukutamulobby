@@ -1,0 +1,572 @@
+/* Time Information Display */
+.time-info-display {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.time-info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.time-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.time-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    background: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    min-width: 100px;
+    text-align: center;
+}
+
+/* Responsive for time info */
+@media (max-width: 768px) {
+    .time-info-display {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .time-info-item {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .time-value {
+        min-width: 120px;
+    }
+}
+
+/* Custom Header Styles */
+.custom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.custom-date-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.custom-badge {
+    background: linear-gradient(135deg, #6b7280, #9ca3af);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.date-dropdown {
+    position: relative;
+}
+
+.date-dropdown-btn {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #374151;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    transition: all 0.2s ease;
+    min-width: 200px;
+    font-weight: 500;
+}
+
+.date-dropdown-btn:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+}
+
+.dropdown-arrow {
+    color: #6b7280;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.date-dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.date-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    z-index: 1000;
+    display: none;
+    margin-top: 4px;
+}
+
+.date-dropdown.active .date-dropdown-menu {
+    display: block;
+}
+
+.date-dropdown-menu a {
+    display: block;
+    padding: 10px 16px;
+    color: #374151;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    font-weight: 400;
+}
+
+.date-dropdown-menu a:hover {
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+.custom-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-btn {
+    background: #f9fafb;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    color: #6b7280;
+}
+
+.icon-btn:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+    color: #374151;
+    transform: translateY(-1px);
+}
+
+.icon-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .custom-header {
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+    }
+    
+    .custom-date-section {
+        justify-content: center;
+    }
+    
+    .custom-icons {
+        justify-content: center;
+    }
+}
+
+/* Date Range Picker Custom Styles */
+.daterangepicker {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.daterangepicker .calendar-table {
+    border: none;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.daterangepicker .calendar-table .next span,
+.daterangepicker .calendar-table .prev span {
+    border: none;
+    color: #6b7280;
+    background: transparent;
+}
+
+.daterangepicker .calendar-table .next:hover span,
+.daterangepicker .calendar-table .prev:hover span {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.daterangepicker td.available:hover,
+.daterangepicker th.available:hover {
+    background: #f3f4f6;
+    color: #374151;
+    border-radius: 6px;
+}
+
+.daterangepicker td.in-range {
+    background: #dbeafe;
+    color: #1e40af;
+    border-radius: 0;
+}
+
+.daterangepicker td.start-date {
+    border-radius: 6px 0 0 6px;
+}
+
+.daterangepicker td.end-date {
+    border-radius: 0 6px 6px 0;
+}
+
+.daterangepicker td.start-date.end-date {
+    border-radius: 6px;
+}
+
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: white;
+    border-radius: 6px;
+}
+
+.daterangepicker .calendar-table thead tr th {
+    color: #6b7280;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.daterangepicker .calendar-table tbody tr td {
+    font-size: 14px;
+    font-weight: 400;
+    color: #374151;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.daterangepicker .ranges {
+    background: #f9fafb;
+    border: none;
+    padding: 16px;
+}
+
+.daterangepicker .ranges li {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 4px 0;
+    font-size: 14px;
+    color: #374151;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.daterangepicker .ranges li:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+.daterangepicker .ranges li.active {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: white;
+    border-color: #3b82f6;
+}
+
+.daterangepicker .drp-buttons {
+    border-top: 1px solid #e5e7eb;
+    padding: 12px 16px;
+}
+
+.daterangepicker .drp-buttons .btn {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.daterangepicker .drp-buttons .btn:hover {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    transform: translateY(-1px);
+}
+
+.daterangepicker .drp-buttons .btn.cancel {
+    background: #f3f4f6;
+    color: #6b7280;
+    border: 1px solid #d1d5db;
+}
+
+.daterangepicker .drp-buttons .btn.cancel:hover {
+    background: #e5e7eb;
+    color: #4b5563;
+}
+
+/* Custom Button Styles */
+.chart-header > div {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.export-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.export-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    min-width: 220px;
+    z-index: 1000;
+    display: none;
+    overflow: hidden;
+}
+
+.export-dropdown-menu.show {
+    display: block;
+}
+
+.export-dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: #374151;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.export-dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+.export-dropdown-menu a:hover {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    color: #16a34a;
+}
+
+.export-dropdown-menu a span:first-child {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.customize-btn {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.customize-btn:hover {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+.customize-btn:active {
+    transform: translateY(0);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a202c;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #718096;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+    background: #f7fafc;
+    color: #2d3748;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.btn-secondary:hover {
+    background: #e5e7eb;
+}

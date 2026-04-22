@@ -1,0 +1,244 @@
+/* Admin Pengunjung Edit CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: radial-gradient(circle at top left, #d9f7ea 0, #f3f6fb 45%, #e5f7ee 100%);
+    color: #111827;
+    padding: 32px 16px;
+}
+
+.card {
+    width: 100%;
+    max-width: 820px;
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 28px 60px rgba(15, 23, 42, 0.18);
+    padding: 26px 30px 30px;
+    border: 1px solid rgba(34, 197, 94, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 32px 68px rgba(15, 23, 42, 0.22);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    letter-spacing: 0.01em;
+}
+
+.card-subtitle {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.alert {
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #ecfdf3, #dcfce7);
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #16a34a;
+}
+
+.alert-error {
+    background: linear-gradient(135deg, #fef2f2, #fee2e2);
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    border-left: 4px solid #dc2626;
+}
+
+.alert-error ul {
+    padding-left: 18px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 20px;
+    margin-top: 10px;
+}
+
+.field-full {
+    grid-column: span 2;
+}
+
+label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    display: block;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    padding: 10px 12px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    background-color: #f9fafb;
+}
+
+input:focus,
+select:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 1px #bbf7d0;
+    background-color: #ffffff;
+}
+
+.hint {
+    font-size: 11px;
+    color: #9ca3af;
+    margin-top: 2px;
+}
+
+.actions {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4px;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    border: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 22px;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(34, 197, 94, 0.45);
+}
+
+.btn-secondary {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #111827;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+@media (max-width: 640px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .field-full,
+    .actions {
+        grid-column: span 1;
+    }
+
+    .actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Theme: match Buku Tamu */
+body.light-mode {
+    background: linear-gradient(135deg, #21c16b 0%, #0a9b4e 100%);
+    color: #ffffff;
+}
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+    color: #ffffff;
+}
+body.dark-mode .card {
+    background: rgba(30, 41, 59, 0.98);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.5);
+}
+body.dark-mode label { color: #e5e7eb; }
+body.dark-mode input[type="text"],
+body.dark-mode input[type="number"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="tel"],
+body.dark-mode select {
+    background-color: rgba(255,255,255,0.12);
+    color: #e5e7eb;
+    border-color: rgba(255,255,255,0.25);
+}
+body.dark-mode input:focus,
+body.dark-mode select:focus {
+    background-color: rgba(255,255,255,0.18);
+    box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.35);
+}
+body.dark-mode .btn-secondary {
+    background: rgba(255,255,255,0.12);
+    color: #e5e7eb;
+    border-color: rgba(255,255,255,0.25);
+}
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    color: #ffffff;
+}
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+}
